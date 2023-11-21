@@ -14,13 +14,15 @@ struct NewPiste: View {
     @State var imageUrl = ""
     @State var pisteState = 1
     
-    @Binding var pisteCollection : PisteCollection
+    @ObservedObject var pisteCollection : PisteCollection
+    
+    
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
             VStack {
                 TextField("Nom de la piste", text: $pisteName).textFieldStyle(RoundedBorderTextFieldStyle())
-                                TextField("Image Url", text: $pisteName).textFieldStyle(RoundedBorderTextFieldStyle())
+                                TextField("Image Url", text: $imageUrl).textFieldStyle(RoundedBorderTextFieldStyle())
                                 HStack{
                                     Text("Etat de la piste")
                                     Spacer()
@@ -36,11 +38,13 @@ struct NewPiste: View {
                                 }
                 Spacer()
             }
-            }.padding().background(.gray.opacity(0.2))
+        }.padding()
     }
 }
 
 struct NewPiste_Previews: PreviewProvider {
+    
+    
     static var previews: some View {
         NewPiste(pisteCollection: PisteCollection(pistes: []))
     }

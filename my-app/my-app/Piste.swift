@@ -7,24 +7,47 @@
 
 import Foundation
 
-struct PisteStructure: Identifiable{
+class PisteStructure: Identifiable, ObservableObject {
     
-    let id: UUID
-    var name: String
-    var dateCreation: Date
-    var url: URL
-    var state: Int
+    let id: UUID = UUID()
+    @Published var name: String
+    @Published var dateCreation: Date
+    @Published var url: URL
+    @Published var state: Int
+    
+    init(name: String, dateCreation: Date, url: URL, state: Int) {
+        self.name = name
+        self.dateCreation = dateCreation
+        self.url = url
+        self.state = state
+    }
 }
 
-struct PisteCollection {
-    var pistes: [PisteStructure]
+class PisteCollection: ObservableObject {
     
-    mutating func add(name: String, imageString: String, date: Date, state: Int){
+    
+//    @Published
+    @Published var pistes: [PisteStructure]
+    
+    init(pistes: [PisteStructure]) {
+        self.pistes = pistes
+    }
+    
+     func add(name: String, imageString: String, date: Date, state: Int){
         
-        let url = URL(fileURLWithPath: imageString)
+        let url: URL = URL(string: imageString)!
         
-        let newPiste = PisteStructure(id: UUID(), name: name, dateCreation: date, url: url, state: state)
+        let newPiste = PisteStructure(name: name, dateCreation: date, url: url, state: state)
         
         pistes.append(newPiste)
+        
+        print(pistes)
+    }
+    
+     func remove(id: UUID){
+        
+        pistes.removeAll { PisteStructure in
+            PisteStructure.id == id
+        }
     }
 }
