@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6E26A0872B0CC20700253B0A /* PisteDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E26A0862B0CC20700253B0A /* PisteDetails.swift */; };
 		6E26A0892B0D071F00253B0A /* PisteDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E26A0882B0D071F00253B0A /* PisteDetailCell.swift */; };
+		6E3A80DE2B0E0A1500078DA0 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3A80DD2B0E0A1500078DA0 /* WebService.swift */; };
 		6E7CF0062B0B6C2000431589 /* my_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7CF0052B0B6C2000431589 /* my_appApp.swift */; };
 		6E7CF0082B0B6C2000431589 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7CF0072B0B6C2000431589 /* ContentView.swift */; };
 		6E7CF00A2B0B6C2300431589 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E7CF0092B0B6C2300431589 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		6E26A0862B0CC20700253B0A /* PisteDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PisteDetails.swift; sourceTree = "<group>"; };
 		6E26A0882B0D071F00253B0A /* PisteDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PisteDetailCell.swift; sourceTree = "<group>"; };
+		6E3A80DD2B0E0A1500078DA0 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		6E7CF0022B0B6C2000431589 /* my-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "my-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E7CF0052B0B6C2000431589 /* my_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_appApp.swift; sourceTree = "<group>"; };
 		6E7CF0072B0B6C2000431589 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				6E7CF0092B0B6C2300431589 /* Assets.xcassets */,
 				6E7CF00B2B0B6C2300431589 /* Preview Content */,
 				6E26A0882B0D071F00253B0A /* PisteDetailCell.swift */,
+				6E3A80DD2B0E0A1500078DA0 /* WebService.swift */,
 			);
 			path = "my-app";
 			sourceTree = "<group>";
@@ -95,6 +98,8 @@
 			dependencies = (
 			);
 			name = "my-app";
+			packageProductDependencies = (
+			);
 			productName = "my-app";
 			productReference = 6E7CF0022B0B6C2000431589 /* my-app.app */;
 			productType = "com.apple.product-type.application";
@@ -123,6 +128,8 @@
 				Base,
 			);
 			mainGroup = 6E7CEFF92B0B6C2000431589;
+			packageReferences = (
+			);
 			productRefGroup = 6E7CF0032B0B6C2000431589 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -151,6 +158,7 @@
 			files = (
 				6E26A0892B0D071F00253B0A /* PisteDetailCell.swift in Sources */,
 				6E7CF0162B0BA83D00431589 /* NewPiste.swift in Sources */,
+				6E3A80DE2B0E0A1500078DA0 /* WebService.swift in Sources */,
 				6E7CF0082B0B6C2000431589 /* ContentView.swift in Sources */,
 				6E7CF0142B0BA49D00431589 /* Piste.swift in Sources */,
 				6E7CF0062B0B6C2000431589 /* my_appApp.swift in Sources */,
