@@ -119,7 +119,7 @@ struct PisteDetails: View {
                 
             }
         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top).padding().navigationBarItems(trailing: btnDelete).onAppear{
-//            fetchData()
+            fetchData()
         }
     }
     
