@@ -29,11 +29,12 @@ struct PisteDetails: View {
     
     var body: some View {
         ZStack (){
-            VStack(alignment: .leading){
+            VStack(alignment: .center){
                 AsyncImage(url: pisteDetails.url){ image in
                     image.resizable().aspectRatio(contentMode: .fit)
                 } placeholder: {
-                    ProgressView()
+//                    ProgressView()
+                    Rectangle().foregroundColor(.gray)
                 }.cornerRadius(15).frame(maxHeight: 300)
                 HStack(alignment: .center) {
                     HStack{
@@ -58,12 +59,15 @@ struct PisteDetails: View {
                     
                     
                 }
+                HStack(){
+                    Picker(selection: $pisteDetails.state, label: Text("Etat") ) {
+                                        Text("Ouverte").tag(1)
+                                        Text("En aménagement").tag(2)
+                                        Text("Fermée").tag(3)
+                                    }
+                    Spacer()
+                }
                 
-                Picker(selection: $pisteDetails.state, label: Text("Etat") ) {
-                                    Text("Ouverte").tag(1)
-                                    Text("En aménagement").tag(2)
-                                    Text("Fermée").tag(3)
-                                }
                 
                 
                 
@@ -76,6 +80,11 @@ struct PisteDetails: View {
                     }
                     else if(weatherResponse.data.values.rainIntensity > 0 && weatherResponse.data.values.rainIntensity > weatherResponse.data.values.snowIntensity){
                         Image("rain").resizable().aspectRatio(contentMode: .fit).frame(maxHeight: 100)
+                    } else if(weatherResponse.data.values.cloudCover > 80){
+                        Image("cloud").resizable().aspectRatio(contentMode: .fit).frame(maxHeight: 100)
+                    }
+                    else if(weatherResponse.data.values.cloudCover > 50){
+                        Image("cloudSun").resizable().aspectRatio(contentMode: .fit).frame(maxHeight: 100)
                     }
                     else{
                         Image("sun").resizable().aspectRatio(contentMode: .fit).frame(maxHeight: 100)
@@ -127,7 +136,8 @@ struct PisteDetails: View {
     
     func fetchData() {
 //             Remplacez l'URL par l'URL de votre API 7da60ddd82890b9ff3d8fec758b2ba32
-            let apiUrl = URL(string: "https://api.tomorrow.io/v4/weather/realtime?location=45.811786363173866,6.723216738742208&apikey=TP6t12SNStqHXMZ7Uc2aiv4INWhqFVFI")!
+        let urlString: String = "https://api.tomorrow.io/v4/weather/realtime?location=\(pisteDetails.position)&apikey=TP6t12SNStqHXMZ7Uc2aiv4INWhqFVFI"
+        let apiUrl = URL(string: urlString)!
         
             // Créez une session URLSession
             let session = URLSession.shared
@@ -153,7 +163,7 @@ struct PisteDetails: View {
 
 struct PisteDetails_Previews: PreviewProvider {
     static var previews: some View {
-        PisteDetails( pisteDetails: PisteStructure(name: "test", dateCreation: Date(), url: URL(string: "https://static8.depositphotos.com/1443681/907/i/450/depositphotos_9077647-stock-photo-pair-of-cross-skis.jpg") ?? URL(filePath: ""), state: 2), pisteCollection: PisteCollection(pistes: []))
+        PisteDetails( pisteDetails: PisteStructure(name: "test", dateCreation: Date(), url: URL(string: "https://images.unsplash.com/photo-1565992441121-4367c2967103?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2tpfGVufDB8fDB8fHww") ?? URL(filePath: ""), state: 2, position: "45.811786363173866,6.723216738742208"), pisteCollection: PisteCollection(pistes: []))
     }
 }
 

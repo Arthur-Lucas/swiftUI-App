@@ -26,6 +26,6 @@ struct PisteDetailCell: View {
 
 struct PisteDetailCell_Previews: PreviewProvider {
     static var previews: some View {
-        PisteDetailCell(piste: PisteStructure(name: "test", dateCreation: Date(), url: URL(string: "https://static8.depositphotos.com/1443681/907/i/450/depositphotos_9077647-stock-photo-pair-of-cross-skis.jpg") ?? URL(filePath: ""), state: 2))
+        PisteDetailCell(piste: PisteStructure(name: "test", dateCreation: Date(), url: URL(string: "https://static8.depositphotos.com/1443681/907/i/450/depositphotos_9077647-stock-photo-pair-of-cross-skis.jpg") ?? URL(filePath: ""), state: 2, position: "45.811786363173866,6.723216738742208"))
     }
 }

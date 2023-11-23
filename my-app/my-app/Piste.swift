@@ -14,12 +14,14 @@ class PisteStructure: Identifiable, ObservableObject {
     @Published var dateCreation: Date
     @Published var url: URL
     @Published var state: Int
+    @Published var position: String
     
-    init(name: String, dateCreation: Date, url: URL, state: Int) {
+    init(name: String, dateCreation: Date, url: URL, state: Int, position: String) {
         self.name = name
         self.dateCreation = dateCreation
         self.url = url
         self.state = state
+        self.position = position
     }
 }
 
@@ -33,15 +35,14 @@ class PisteCollection: ObservableObject {
         self.pistes = pistes
     }
     
-     func add(name: String, imageString: String, date: Date, state: Int){
-        
+    func add(name: String, imageString: String, date: Date, state: Int, position: String){
+        print(imageString)
         let url: URL = URL(string: imageString)!
         
-        let newPiste = PisteStructure(name: name, dateCreation: date, url: url, state: state)
-        
+        let newPiste = PisteStructure(name: name, dateCreation: date, url: url, state: state, position: position)
         pistes.append(newPiste)
         
-        print(pistes)
+        
     }
     
      func remove(id: UUID){
@@ -49,5 +50,6 @@ class PisteCollection: ObservableObject {
         pistes.removeAll { PisteStructure in
             PisteStructure.id == id
         }
+         
     }
 }

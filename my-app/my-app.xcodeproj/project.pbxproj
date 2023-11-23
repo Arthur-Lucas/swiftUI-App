@@ -66,10 +66,10 @@
 				6E7CF0132B0BA49D00431589 /* Piste.swift */,
 				6E7CF0152B0BA83D00431589 /* NewPiste.swift */,
 				6E26A0862B0CC20700253B0A /* PisteDetails.swift */,
-				6E7CF0092B0B6C2300431589 /* Assets.xcassets */,
-				6E7CF00B2B0B6C2300431589 /* Preview Content */,
 				6E26A0882B0D071F00253B0A /* PisteDetailCell.swift */,
 				6E3A80DD2B0E0A1500078DA0 /* WebService.swift */,
+				6E7CF0092B0B6C2300431589 /* Assets.xcassets */,
+				6E7CF00B2B0B6C2300431589 /* Preview Content */,
 			);
 			path = "my-app";
 			sourceTree = "<group>";
